@@ -47,14 +47,26 @@ body {
 
 .btn {
     min-width: 170px;
-    padding: 12px 26px 13px 27px;
+    padding: 11px 26px 11px 27px;
     background-color: white;
     border: 2px solid $pink;
     border-radius: 40px;
     text-align: center;
+    transition-property: color, box-shadow;
+    transition-duration: 0.2s;
+
+    &:hover {
+        color: $pink;
+        box-shadow: inset 0 0 15px $pink;
+    }
 }
 
 @keyframes scale {
-    0% { transform: none; }   
-    75% { transform: scale(0.5); }
+    0% {
+        transform: none;
+    }
+
+    75% {
+        transform: scale(0.5);
+    }
 }

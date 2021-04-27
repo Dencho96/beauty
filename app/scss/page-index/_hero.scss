@@ -5,12 +5,22 @@
     &__inner {
         align-items: center;
         height: 100%;
+
+        @include maxw992 {
+            flex-direction: column;
+            padding-top: 35px;
+        }
     }
 
     &__box {
+        margin-top: -35px;
         max-width: 308px;
         width: 100%;
         color: white;
+
+        @include maxw992 {
+            margin-bottom: 55px;
+        }
     }
 
     &__title {
@@ -29,6 +39,13 @@
         margin-top: 43px;
         border: 2px solid white;
         background-color: transparent;
+        transition-duration: 0.2s;
+        letter-spacing: 2px;
+
+        &:hover {
+            color: inherit;
+            box-shadow: inset 0 0 15px white;
+        }
     }
 
     &__img-wrapper,
@@ -41,11 +58,15 @@
     }
 
     &__img-wrapper {
+
         &::before,
         &::after {
-            top: 0;
-            left: 0;
             border-radius: 50%;
+
+            @include maxw992 {
+                top: 0;
+                left: 0;
+            }
         }
 
         &::before {
@@ -57,6 +78,10 @@
             height: 677px;
             background-color: rgba(255, 255, 255, 0.4);
             animation: scale 2s ease-in-out infinite;
+            @include maxw992 {
+                width: 550px;
+                height: 550px;
+            }
         }
 
         &::after {
@@ -68,10 +93,17 @@
             height: 859px;
             background-color: rgba(255, 255, 255, 0.3);
             animation: scale 3s ease-in-out infinite;
+
+            @include maxw992{
+                width: 700px;
+                height: 700px;  
+            }
         }
     }
 
     &__img {
         z-index: 5;
+        background-size: contain;
+        background-position: center;
     }
 }
